@@ -1,7 +1,6 @@
 class Api::V1::PatientController < ApplicationController
   def index
     @patients = Patient.all
-
     render json: @patients, status: 200
   end
 
