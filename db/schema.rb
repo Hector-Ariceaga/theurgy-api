@@ -10,15 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_042504) do
+ActiveRecord::Schema.define(version: 2018_12_25_215504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "diagnoses", force: :cascade do |t|
+    t.string "name"
+    t.integer "patient_id"
+  end
 
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.datetime "dob"
     t.integer "user_id"
+  end
+
+  create_table "symptoms", force: :cascade do |t|
+    t.string "name"
+    t.integer "patient_id"
+  end
+
+  create_table "therapies", force: :cascade do |t|
+    t.integer "patient_id"
+    t.integer "treatment_id"
+    t.boolean "active", default: false
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.string "name"
+    t.string "details"
   end
 
   create_table "users", force: :cascade do |t|
