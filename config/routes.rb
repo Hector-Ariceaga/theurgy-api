@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :users do
         resources :patients
       end
+      resources :symptoms
+      resources :diagnoses
+      resources :treatments
+      resources :therapies
     end
   end
 end
