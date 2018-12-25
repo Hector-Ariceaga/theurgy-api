@@ -24,7 +24,6 @@ class Api::V1::PatientsController < ApplicationController
       render json: {patientID: @patient.id}  
     else
       flash[:message] = "Patient was deletion was unsuccessful."
-      redirect_to user_path(@patient)
     end
   end
 
