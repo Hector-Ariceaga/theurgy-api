@@ -30,3 +30,7 @@ treatment3 = Treatment.create(name: 'ACT', details: 'Acceptance and Commitment T
 treatment4 = Treatment.create(name: 'DBT', details: 'Dialectial Behavior Therapy focuses on improving interpersonal relationships and developing distress tolerance')
 treatment5 = Treatment.create(name: 'CBT', details: 'Cognitive Behavioral Therapy is focuses changing the cognitions and ideas that influence our behaviors.')
 treatment6 = Treatment.create(name: 'Care Coordination', details: "Focuses on gathering and connecting the patient to resources in an effort to reduce psychosocial stressors (e.g., housing assistance, financial assistance, food assistance)")
+
+therapy1 = patient1.therapies.create(treatment_id: treatment1.id)
+
+therapy2 = patient1.therapies.create(treatment_id: treatment2.id)

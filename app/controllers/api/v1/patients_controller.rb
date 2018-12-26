@@ -1,10 +1,14 @@
 class Api::V1::PatientsController < ApplicationController
   before_action :current_user, only: [:create, :show, :edit]
-  before_action :current_patient, only: [:update, :destroy]
+  before_action :current_patient, only: [:update, :show, :destroy]
 
   def index
     @patients = Patient.all
     render json: @patients, status: 200
+  end
+
+  def show
+    render json: @patient, status: 200
   end
 
   def create
